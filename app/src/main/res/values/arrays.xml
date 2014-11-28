@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <array name="drawer_items">
+        <item>@string/drawer_search_accommodation</item>
+        <item>@string/drawer_login</item>
+        <item>@string/drawer_parameters</item>
+    </array>
+    
+    <array name="logged_in_drawer_items">
+        <item>@string/drawer_search_accommodation</item>
+        <item>@string/drawer_parameters</item>
+    </array>
+
+</resources>

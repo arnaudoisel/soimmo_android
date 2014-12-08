@@ -28,4 +28,5 @@ dependencies {
     provided 'com.squareup.dagger:dagger-compiler:1.2.2'
     compile 'com.jakewharton:butterknife:6.0.0'
     compile 'de.greenrobot:eventbus:2.2.1'
+    compile 'com.squareup.retrofit:retrofit:1.8.0'
 }

@@ -1,19 +1,12 @@
 package fr.soat.soimmo.services;
 
 import android.content.ComponentName;
-import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
-import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
 import android.os.Messenger;
-import android.os.RemoteException;
-
-import fr.soat.soimmo.models.AuthDetails;
-import fr.soat.soimmo.models.User;
-import fr.soat.soimmo.services.modules.AuthenticationServiceModule;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -23,13 +16,19 @@ import java.util.Map;
 
 import javax.inject.Inject;
 
+import fr.soat.soimmo.service_helpers.LoginManager;
+import fr.soat.soimmo.service_helpers.SessionManager;
+import fr.soat.soimmo.models.AuthDetails;
+import fr.soat.soimmo.models.User;
+import fr.soat.soimmo.services.modules.AuthenticationServiceModule;
+
 public class AuthenticationService extends BaseService  {
 
 	public static final String TAG_MSG_TO_SIGN = "message_to_sign";
 	public static final String TAG_SIGNED_MSG = "signed_message";
 
 	@Inject
-	SessionManager sessionManager;
+    SessionManager sessionManager;
 	
 	/**
 	 * Used if the SignatureService is not ready to be called yet.

@@ -1,15 +1,15 @@
-package fr.soat.soimmo.services;
+package fr.soat.soimmo.service_helpers;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 
+import javax.inject.Inject;
+
 import fr.soat.soimmo.events.EventBus;
 import fr.soat.soimmo.events.SessionUpdatedEvent;
 import fr.soat.soimmo.models.User;
 import fr.soat.soimmo.modules.ForApplication;
-
-import javax.inject.Inject;
 
 public class SessionManager {
 
@@ -49,7 +49,7 @@ public class SessionManager {
 		return user;
 	}
 	
-	void setUser(User user) {
+	public void setUser(User user) {
 
 		// TODO If other user is already logged in, notify listeners that user has changed (so that they can save old user data).
 

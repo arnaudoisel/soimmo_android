@@ -4,8 +4,8 @@ import android.content.Context;
 
 import fr.soat.soimmo.events.EventBus;
 import fr.soat.soimmo.models.User;
-import fr.soat.soimmo.services.LoginManager;
-import fr.soat.soimmo.services.SessionManager;
+import fr.soat.soimmo.service_helpers.LoginManager;
+import fr.soat.soimmo.service_helpers.SessionManager;
 
 import javax.inject.Singleton;
 

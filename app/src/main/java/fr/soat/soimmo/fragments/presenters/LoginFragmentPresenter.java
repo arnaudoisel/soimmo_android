@@ -25,6 +25,11 @@ public class LoginFragmentPresenter extends BaseFragmentPresenter {
     }
 
     @Override
+    protected boolean needRegistrationToFragmentEventBus() {
+        return false;
+    }
+
+    @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 

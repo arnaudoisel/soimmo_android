@@ -1,10 +1,11 @@
-package fr.soat.soimmo.services;
+package fr.soat.soimmo.service_helpers;
 
 import android.content.Context;
 import android.content.Intent;
 
 import fr.soat.soimmo.models.AuthDetails;
 import fr.soat.soimmo.models.User;
+import fr.soat.soimmo.services.AuthenticationService;
 
 public class LoginManager {
 	

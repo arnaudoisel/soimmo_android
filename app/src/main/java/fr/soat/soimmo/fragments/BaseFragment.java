@@ -2,6 +2,7 @@ package fr.soat.soimmo.fragments;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -19,6 +20,7 @@ import butterknife.ButterKnife;
 import dagger.ObjectGraph;
 import fr.soat.soimmo.activities.BaseActivity;
 import fr.soat.soimmo.fragments.presenters.FragmentPresenter;
+import fr.soat.soimmo.modules.ForActivity;
 
 public abstract class BaseFragment extends Fragment implements FragmentView {
 
@@ -26,6 +28,10 @@ public abstract class BaseFragment extends Fragment implements FragmentView {
 
 	@Inject
 	FragmentPresenter presenter;
+
+    @Inject
+    @ForActivity
+    Context activityContext;
 
 	protected abstract List<Object> getModules();
 	protected abstract int getViewId();

@@ -5,29 +5,23 @@ import java.util.Date;
 
 public class Accommodation {
 
+    private long id;
     private Address address;
-
     private Double surface;
-
     private Integer rooms;
-
     private Boolean elevator;
-
     private Double rent;
-
     private Double charge;
-
     private Date availableFrom;
-
     private Boolean active;
-
     private AccommodationType type;
-
     private HotWaterProductionType hotWaterProductionType;
-
     private HeatingType heatingType;
 
-    public Accommodation(Address address, Double surface, Integer rooms, Boolean elevator, Double rent, Double charge, Date availableFrom, Boolean active, AccommodationType type, HotWaterProductionType hotWaterProductionType, HeatingType heatingType) {
+    public Accommodation() {
+    }
+
+    public Accommodation(long id, Address address, Double surface, Integer rooms, Boolean elevator, Double rent, Double charge, Date availableFrom, Boolean active, AccommodationType type, HotWaterProductionType hotWaterProductionType, HeatingType heatingType) {
         this.address = address;
         this.surface = surface;
         this.rooms = rooms;
@@ -39,6 +33,14 @@ public class Accommodation {
         this.type = type;
         this.hotWaterProductionType = hotWaterProductionType;
         this.heatingType = heatingType;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public Address getAddress() {
@@ -127,5 +129,23 @@ public class Accommodation {
 
     public void setHeatingType(HeatingType heatingType) {
         this.heatingType = heatingType;
+    }
+
+    @Override
+    public String toString() {
+        return "Accommodation{" +
+                "id=" + id +
+                ", address=" + address +
+                ", surface=" + surface +
+                ", rooms=" + rooms +
+                ", elevator=" + elevator +
+                ", rent=" + rent +
+                ", charge=" + charge +
+                ", availableFrom=" + availableFrom +
+                ", active=" + active +
+                ", type=" + type +
+                ", hotWaterProductionType=" + hotWaterProductionType +
+                ", heatingType=" + heatingType +
+                '}';
     }
 }

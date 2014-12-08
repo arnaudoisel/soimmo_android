@@ -2,4 +2,5 @@
 <resources>
     <color name="green_soat">#9ec02d</color>
     <color name="white">#FFFFFF</color>
+    <color name="card_background">#9ec02d</color>
 </resources>

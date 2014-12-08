@@ -16,6 +16,22 @@ public class Address {
 
     private String longitude;
 
+    @Override
+    public String toString() {
+        return "Address{" +
+                "street='" + street + '\'' +
+                ", zipCode='" + zipCode + '\'' +
+                ", city='" + city + '\'' +
+                ", state='" + state + '\'' +
+                ", country='" + country + '\'' +
+                ", latitude='" + latitude + '\'' +
+                ", longitude='" + longitude + '\'' +
+                '}';
+    }
+
+    public Address() {
+    }
+
     public Address(String street, String zipCode, String city, String state, String country, String latitude, String longitude) {
         this.street = street;
         this.zipCode = zipCode;

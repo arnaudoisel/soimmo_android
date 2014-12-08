@@ -34,11 +34,22 @@ public abstract class BaseFragmentPresenter implements FragmentPresenter {
 	@Inject @ForActivity
 	Context activityContext;
 
+    @Inject
+    EventBus fragmentEventBus;
+
     protected abstract boolean hasOptionsMenu();
+
+    /**
+     *
+     * @return true if fragment has onEvent methods for fragment eventBus
+     */
+    protected abstract boolean needRegistrationToFragmentEventBus();
 
 	@Override
 	public void onAttach(Activity activity) {
-	}
+        if (needRegistrationToFragmentEventBus())
+            fragmentEventBus.register(this);
+    }
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -85,7 +96,9 @@ public abstract class BaseFragmentPresenter implements FragmentPresenter {
 
 	@Override
 	public void onDetach() {
-	}
+        if (needRegistrationToFragmentEventBus())
+            fragmentEventBus.unregister(this);
+    }
 
 	@Override
 	public void onSaveInstanceState(Bundle outState) {

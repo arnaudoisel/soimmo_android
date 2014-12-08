@@ -5,6 +5,8 @@ import javax.inject.Singleton;
 import dagger.Module;
 import dagger.Provides;
 import fr.soat.soimmo.activities.modules.MainActivityModule;
+import fr.soat.soimmo.events.EventBus;
+import fr.soat.soimmo.events.EventBusImpl;
 import fr.soat.soimmo.fragments.FragmentView;
 import fr.soat.soimmo.fragments.SearchAccommodationFragment;
 import fr.soat.soimmo.fragments.SearchAccommodationFragmentImpl;
@@ -36,6 +38,12 @@ public class SearchAccommodationFragmentModule {
 
     @Provides
     @Singleton
+    SearchAccommodationFragment provideSearchAccommodationFragmentView() {
+        return view;
+    }
+
+    @Provides
+    @Singleton
     FragmentPresenter provideFragmentPresenter(SearchAccommodationFragmentPresenterImpl presenter) {
         return initPresenter(presenter);
     }
@@ -52,4 +60,8 @@ public class SearchAccommodationFragmentModule {
         return presenter;
     }
 
+    @Provides @Singleton
+    EventBus provideEventBus() {
+        return new EventBusImpl(new de.greenrobot.event.EventBus());
+    }
 }

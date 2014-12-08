@@ -9,7 +9,7 @@ import android.widget.ListView;
 import javax.inject.Inject;
 
 import fr.soat.soimmo.fragments.MainFragment;
-import fr.soat.soimmo.services.LoginManager;
+import fr.soat.soimmo.service_helpers.LoginManager;
 import fr.soat.soimmo.widgets.DrawerToggle.DrawerOpenedClosedListener;
 import fr.soat.soimmo.widgets.DrawerTogglePresenter;
 
@@ -71,6 +71,11 @@ public abstract class MainBaseFragmentPresenter extends BaseFragmentPresenter im
     @Override
     protected boolean hasOptionsMenu() {
         return true;
+    }
+
+    @Override
+    protected boolean needRegistrationToFragmentEventBus() {
+        return false;
     }
 
 }

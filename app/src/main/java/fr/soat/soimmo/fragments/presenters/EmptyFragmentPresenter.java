@@ -14,4 +14,9 @@ public class EmptyFragmentPresenter extends BaseFragmentPresenter {
     protected boolean hasOptionsMenu() {
         return false;
     }
+
+    @Override
+    protected boolean needRegistrationToFragmentEventBus() {
+        return false;
+    }
 }

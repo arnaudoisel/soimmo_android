@@ -5,10 +5,11 @@ import java.util.Date;
 
 public class Accommodation {
 
-    private long id;
+    private Long id;
     private Address address;
     private Double surface;
     private Integer rooms;
+    private Integer floor;
     private Boolean elevator;
     private Double rent;
     private Double charge;
@@ -21,10 +22,11 @@ public class Accommodation {
     public Accommodation() {
     }
 
-    public Accommodation(long id, Address address, Double surface, Integer rooms, Boolean elevator, Double rent, Double charge, Date availableFrom, Boolean active, AccommodationType type, HotWaterProductionType hotWaterProductionType, HeatingType heatingType) {
+    public Accommodation(long id, Address address, Double surface, Integer rooms, Integer floor, Boolean elevator, Double rent, Double charge, Date availableFrom, Boolean active, AccommodationType type, HotWaterProductionType hotWaterProductionType, HeatingType heatingType) {
         this.address = address;
         this.surface = surface;
         this.rooms = rooms;
+        this.floor = floor;
         this.elevator = elevator;
         this.rent = rent;
         this.charge = charge;
@@ -33,6 +35,14 @@ public class Accommodation {
         this.type = type;
         this.hotWaterProductionType = hotWaterProductionType;
         this.heatingType = heatingType;
+    }
+
+    public Integer getFloor() {
+        return floor;
+    }
+
+    public void setFloor(Integer floor) {
+        this.floor = floor;
     }
 
     public long getId() {
@@ -138,6 +148,7 @@ public class Accommodation {
                 ", address=" + address +
                 ", surface=" + surface +
                 ", rooms=" + rooms +
+                ", floor=" + floor +
                 ", elevator=" + elevator +
                 ", rent=" + rent +
                 ", charge=" + charge +

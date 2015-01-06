@@ -13,6 +13,7 @@ import fr.soat.soimmo.fragments.SearchAccommodationFragmentImpl;
 import fr.soat.soimmo.fragments.presenters.FragmentPresenter;
 import fr.soat.soimmo.fragments.presenters.SearchAccommodationFragmentPresenter;
 import fr.soat.soimmo.fragments.presenters.SearchAccommodationFragmentPresenterImpl;
+import fr.soat.soimmo.modules.ForFragment;
 
 @Module(
         injects = {
@@ -28,6 +29,11 @@ public class SearchAccommodationFragmentModule {
 
     public SearchAccommodationFragmentModule(SearchAccommodationFragment view) {
         this.view = view;
+    }
+
+    @Provides @Singleton @ForFragment
+    EventBus provideEventBus() {
+        return new EventBusImpl(de.greenrobot.event.EventBus.getDefault());
     }
 
     @Provides
@@ -60,8 +66,4 @@ public class SearchAccommodationFragmentModule {
         return presenter;
     }
 
-    @Provides @Singleton
-    EventBus provideEventBus() {
-        return new EventBusImpl(new de.greenrobot.event.EventBus());
-    }
 }

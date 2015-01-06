@@ -21,6 +21,8 @@ import retrofit.converter.GsonConverter;
  */
 public class AccommodationPersistenceRest implements AccommodationPersistence {
 
+    public static final String URL_DOMAIN = "http://10.0.2.2:8080";
+
     private final AccommodationPersistenceRestService service;
 
     public AccommodationPersistenceRest() {
@@ -33,7 +35,7 @@ public class AccommodationPersistenceRest implements AccommodationPersistence {
         }).create();
 
         RestAdapter restAdapter = new RestAdapter.Builder()
-                .setEndpoint("http://10.0.2.2:8080")
+                .setEndpoint(URL_DOMAIN)
                 .setConverter(new GsonConverter(gson))
                 .build();
 

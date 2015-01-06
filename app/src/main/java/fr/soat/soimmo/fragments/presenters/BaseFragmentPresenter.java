@@ -19,6 +19,7 @@ import fr.soat.soimmo.fragments.FragmentView;
 import fr.soat.soimmo.models.User;
 import fr.soat.soimmo.modules.ForActivity;
 import fr.soat.soimmo.modules.ForApplication;
+import fr.soat.soimmo.modules.ForFragment;
 
 public abstract class BaseFragmentPresenter implements FragmentPresenter {
 
@@ -34,7 +35,7 @@ public abstract class BaseFragmentPresenter implements FragmentPresenter {
 	@Inject @ForActivity
 	Context activityContext;
 
-    @Inject
+    @Inject @ForFragment
     EventBus fragmentEventBus;
 
     protected abstract boolean hasOptionsMenu();

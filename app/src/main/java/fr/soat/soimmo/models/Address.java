@@ -2,37 +2,27 @@ package fr.soat.soimmo.models;
 
 public class Address {
 
+    private Long id;
+
     private String street;
 
     private String zipCode;
 
-    private String city;
+    private City city;
 
-    private String state;
+    private State state;
 
-    private String country;
+    private Country country;
 
-    private String latitude;
+    private Double latitude;
 
-    private String longitude;
-
-    @Override
-    public String toString() {
-        return "Address{" +
-                "street='" + street + '\'' +
-                ", zipCode='" + zipCode + '\'' +
-                ", city='" + city + '\'' +
-                ", state='" + state + '\'' +
-                ", country='" + country + '\'' +
-                ", latitude='" + latitude + '\'' +
-                ", longitude='" + longitude + '\'' +
-                '}';
-    }
+    private Double longitude;
 
     public Address() {
     }
 
-    public Address(String street, String zipCode, String city, String state, String country, String latitude, String longitude) {
+    public Address(Long id, String street, String zipCode, City city, State state, Country country, Double latitude, Double longitude) {
+        this.id = id;
         this.street = street;
         this.zipCode = zipCode;
         this.city = city;
@@ -40,6 +30,22 @@ public class Address {
         this.country = country;
         this.latitude = latitude;
         this.longitude = longitude;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getStreet() {
+        return street;
+    }
+
+    public void setStreet(String street) {
+        this.street = street;
     }
 
     public String getZipCode() {
@@ -50,51 +56,57 @@ public class Address {
         this.zipCode = zipCode;
     }
 
-    public String getCity() {
+    public City getCity() {
         return city;
     }
 
-    public void setCity(String city) {
+    public void setCity(City city) {
         this.city = city;
     }
 
-    public String getState() {
+    public State getState() {
         return state;
     }
 
-    public void setState(String state) {
+    public void setState(State state) {
         this.state = state;
     }
 
-    public String getCountry() {
+    public Country getCountry() {
         return country;
     }
 
-    public void setCountry(String country) {
+    public void setCountry(Country country) {
         this.country = country;
     }
 
-    public String getLatitude() {
+    public Double getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(String latitude) {
+    public void setLatitude(Double latitude) {
         this.latitude = latitude;
     }
 
-    public String getLongitude() {
+    public Double getLongitude() {
         return longitude;
     }
 
-    public void setLongitude(String longitude) {
+    public void setLongitude(Double longitude) {
         this.longitude = longitude;
     }
 
-    public String getStreet() {
-        return street;
-    }
-
-    public void setStreet(String street) {
-        this.street = street;
+    @Override
+    public String toString() {
+        return "Address{" +
+                "id=" + id +
+                ", street='" + street + '\'' +
+                ", zipCode='" + zipCode + '\'' +
+                ", city=" + city +
+                ", state=" + state +
+                ", country=" + country +
+                ", latitude=" + latitude +
+                ", longitude=" + longitude +
+                '}';
     }
 }

@@ -2,20 +2,22 @@ package fr.soat.soimmo;
 
 import android.app.Application;
 
-import fr.soat.soimmo.controllers.AppController;
-import fr.soat.soimmo.modules.AppModule;
-
 import java.util.Arrays;
 import java.util.List;
 
 import javax.inject.Inject;
 
 import dagger.ObjectGraph;
+import fr.soat.soimmo.controllers.AppController;
+import fr.soat.soimmo.modules.AppModule;
 
 public class SoImmo extends Application {
 
 	private ObjectGraph applicationGraph;
-
+/*
+    @Inject
+    SQLiteOpenHelper sqliteOpenHelper;
+*/
 	@Inject
 	AppController appController;
 

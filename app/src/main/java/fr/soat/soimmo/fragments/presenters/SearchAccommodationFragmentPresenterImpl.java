@@ -50,6 +50,13 @@ public class SearchAccommodationFragmentPresenterImpl
         });
     }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+
+        view.closeResourcesOnDestroy();
+    }
+
     public void onEventAsync(CallNetworkEvent event) {
         AccommodationPersistence persistence = new AccommodationPersistenceRest();
         List<Accommodation> accommodations = persistence.getAll();

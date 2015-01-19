@@ -1,15 +1,15 @@
 package fr.soat.soimmo.models;
 
-public class HeatingType {
+public class Country {
 
     private Long id;
 
     private String name;
 
-    public HeatingType() {
+    public Country() {
     }
 
-    public HeatingType(Long id, String name) {
+    public Country(Long id, String name) {
         this.id = id;
         this.name = name;
     }
@@ -32,7 +32,7 @@ public class HeatingType {
 
     @Override
     public String toString() {
-        return "HeatingType{" +
+        return "Country{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 '}';

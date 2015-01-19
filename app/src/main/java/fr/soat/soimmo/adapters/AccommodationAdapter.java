@@ -6,6 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import butterknife.ButterKnife;
@@ -16,6 +18,10 @@ import fr.soat.soimmo.models.Accommodation;
 public class AccommodationAdapter extends RecyclerView.Adapter<AccommodationAdapter.AccommodationViewHolder> {
 
     private List<Accommodation> accommodationList;
+
+    public AccommodationAdapter() {
+        this.accommodationList = new ArrayList<Accommodation>();
+    }
 
     public AccommodationAdapter(List<Accommodation> accommodationList) {
         this.accommodationList = accommodationList;
@@ -29,8 +35,8 @@ public class AccommodationAdapter extends RecyclerView.Adapter<AccommodationAdap
     @Override
     public void onBindViewHolder(AccommodationViewHolder accommodationViewHolder, int i) {
         Accommodation accommodation = accommodationList.get(i);
-        accommodationViewHolder.typeView.setText(accommodation.getType().toString());
-        accommodationViewHolder.cityView.setText(accommodation.getAddress().getCity());
+        accommodationViewHolder.typeView.setText(accommodation.getType().getName());
+        accommodationViewHolder.cityView.setText(accommodation.getAddress().getCity().getName());
         accommodationViewHolder.surfaceView.setText(accommodation.getSurface().toString());
         accommodationViewHolder.rentView.setText(accommodation.getRent().toString());
         accommodationViewHolder.roomsView.setText(String.valueOf(accommodation.getRooms()));
@@ -44,6 +50,37 @@ public class AccommodationAdapter extends RecyclerView.Adapter<AccommodationAdap
 
         return new AccommodationViewHolder(itemView);
     }
+
+    public void add(Accommodation object) {
+        accommodationList.add(object);
+
+        notifyDataSetChanged();
+    }
+
+    public void addAll(Accommodation... items) {
+        Collections.addAll(accommodationList, items);
+
+        notifyDataSetChanged();
+    }
+
+    public void clear() {
+        accommodationList.clear();
+
+        notifyDataSetChanged();
+    }
+
+    public void insert(Accommodation object, int index) {
+        accommodationList.add(index, object);
+
+        notifyDataSetChanged();
+    }
+
+    public void remove(Accommodation object) {
+        accommodationList.remove(object);
+
+        notifyDataSetChanged();
+    }
+
 
     public static class AccommodationViewHolder extends RecyclerView.ViewHolder {
 

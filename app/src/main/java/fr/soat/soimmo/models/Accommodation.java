@@ -22,7 +22,8 @@ public class Accommodation {
     public Accommodation() {
     }
 
-    public Accommodation(long id, Address address, Double surface, Integer rooms, Integer floor, Boolean elevator, Double rent, Double charge, Date availableFrom, Boolean active, AccommodationType type, HotWaterProductionType hotWaterProductionType, HeatingType heatingType) {
+    public Accommodation(Long id, Address address, Double surface, Integer rooms, Integer floor, Boolean elevator, Double rent, Double charge, Date availableFrom, Boolean active, AccommodationType type, HotWaterProductionType hotWaterProductionType, HeatingType heatingType) {
+        this.id = id;
         this.address = address;
         this.surface = surface;
         this.rooms = rooms;
@@ -45,11 +46,11 @@ public class Accommodation {
         this.floor = floor;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
